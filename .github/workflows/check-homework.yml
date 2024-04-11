@@ -1,0 +1,13 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  run_all_tests:
+    name: Run all tests
+    uses: cpp-for-yourself/ci-jobs/.github/workflows/check-homework.yml@main
+    permissions:
+      contents: write
+      pull-requests: write
+    with:
+      homework-definitions-branch: main
