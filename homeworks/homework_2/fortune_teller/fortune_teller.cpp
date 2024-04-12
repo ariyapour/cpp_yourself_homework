@@ -39,11 +39,7 @@ int main() {
 
   // Select the appropriate adjective based on modulo and the size of adjectives
   // and name
-int adjective_index = adjectives.size() % name.size();
-  if (adjective_index == adjectives.size()) {
-    adjective_index = 0;
-  }
-  std::string adjective = adjectives[adjective_index];
+  std::string adjective = adjectives[name.size() % adjectives.size()];
 
   // Define the noun map datastructure
   std::map<std::string, std::string> nouns = {
@@ -59,11 +55,7 @@ int adjective_index = adjectives.size() % name.size();
 
   // Select the appropriate ending based on modulo and the size of endings and
   // name
-  int ending_index = endings.size() % name.size();
-  if (ending_index == endings.size()) {
-    ending_index = 0;
-  }
-  std::string ending = endings[ending_index];
+  std::string ending = endings[name.size() % endings.size()];
 
   // Define the sentence place holder. We assume that the sentence is a fixed
   // size of an vector containing strings with size of
