@@ -40,7 +40,7 @@ int main(){
 
     while(true){
         //Ask the user to provide their next guess:
-        std::cout<<"Please provide the next guess:";
+        std::cout<<"Please provide the next guess: ";
         std::cin>> user_guess;
 
         //Check the user guess
