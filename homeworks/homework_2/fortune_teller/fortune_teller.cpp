@@ -74,7 +74,7 @@ int main() {
   std::string sentence =
       name + ", the "s + adjective + " "s + nouns[season] + " that "s + ending;
 
-  std::cout << "Here is your description:" << std::endl;
+  std::cout << "\nHere is your description:" << std::endl;
   // Print out the final results.
   std::cout << sentence << std::endl;
 }
