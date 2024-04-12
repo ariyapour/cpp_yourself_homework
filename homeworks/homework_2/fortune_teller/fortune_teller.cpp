@@ -39,14 +39,8 @@ int main() {
 
   // Select the appropriate adjective based on modulo and the size of adjectives
   // and name
-//   int adjective_index{};
-//   if (adjectives.size() > name.size()) {
-//     adjective_index = adjectives.size() % name.size();
-//   } else {
-//     adjective_index = name.size() % adjectives.size();
-//   }
 int adjective_index = adjectives.size() % name.size();
-  if (adjective_index > adjectives.size()) {
+  if (adjective_index == adjectives.size()) {
     adjective_index = 0;
   }
   std::string adjective = adjectives[adjective_index];
@@ -65,14 +59,8 @@ int adjective_index = adjectives.size() % name.size();
 
   // Select the appropriate ending based on modulo and the size of endings and
   // name
-//   int ending_index{};
-//   if (endings.size() > name.size()) {
-//     ending_index = endings.size() % name.size();
-//   } else {
-//     ending_index = name.size() % endings.size();
-//   }
   int ending_index = endings.size() % name.size();
-  if (ending_index > endings.size()) {
+  if (ending_index == endings.size()) {
     ending_index = 0;
   }
   std::string ending = endings[ending_index];
