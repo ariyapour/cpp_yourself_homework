@@ -10,14 +10,14 @@ int main(){
     int lower_bound{};
 
     //Ask the user for the smallest number
-    std::cout<<"Please provide the smallest number:"<<std::endl;
+    std::cout<<"Please provide the smallest number:";
     std::cin>> lower_bound;
 
     //Define the uper bound of guessing range
     int upper_bound{};
 
     //Ask the user for the smallest number
-    std::cout<<"Please provide the largest number:"<<std::endl;
+    std::cout<<"Please provide the largest number:";
     std::cin>> upper_bound;
 
     //Define a variable to store the generated random number
@@ -40,7 +40,7 @@ int main(){
 
     while(true){
         //Ask the user to provide their next guess:
-        std::cout<<"Please provide the next guess:"<<std::endl;
+        std::cout<<"Please provide the next guess:";
         std::cin>> user_guess;
 
         //Check the user guess
@@ -59,6 +59,4 @@ int main(){
             std::cout<<"Your number is too big. Try again!"<<std::endl;
         }
     }
-
-    //Ask the user to provide their guess
 }
