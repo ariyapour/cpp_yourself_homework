@@ -22,9 +22,8 @@ int main() {
   std::string season{};
 
   // Ask the user when they were born
-  std::cout << "Please enter the time of year when you were born: \n(pick from "
-               "'spring', 'summer', 'autumn', 'winter')"
-            << std::endl;
+  std::cout << "Please enter the time of year when you were born: "<<std::endl;
+  std::cout << "(pick from 'spring', 'summer', 'autumn', 'winter')"<< std::endl;
   std::cin >> season;
 
   // Define the adjective vector
