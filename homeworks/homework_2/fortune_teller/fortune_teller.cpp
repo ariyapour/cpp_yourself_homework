@@ -22,8 +22,9 @@ int main() {
   std::string season{};
 
   // Ask the user when they were born
-  std::cout << "Please enter the time of year when you were born:"<<std::endl;
-  std::cout << "(pick from 'spring', 'summer', 'autumn', 'winter')"<< std::endl;
+  std::cout << "Please enter the time of year when you were born:" << std::endl;
+  std::cout << "(pick from 'spring', 'summer', 'autumn', 'winter')"
+            << std::endl;
   std::cin >> season;
 
   // Define the adjective vector
@@ -38,9 +39,11 @@ int main() {
 
   // Select the appropriate adjective based on modulo and the size of adjectives
   // and name
-  int adjective_index = adjectives.size() % name.size();
-  if (adjective_index == adjectives.size()) {
-    adjective_index--;
+  int adjective_index{};
+  if (adjectives.size() > name.size()) {
+    adjective_index = adjectives.size() % name.size();
+  } else {
+    adjective_index = name.size() % adjectives.size();
   }
   std::string adjective = adjectives[adjective_index];
 
@@ -58,9 +61,11 @@ int main() {
 
   // Select the appropriate ending based on modulo and the size of endings and
   // name
-  int ending_index = endings.size() % name.size();
-  if (ending_index == endings.size()) {
-    ending_index--;
+  int ending_index{};
+  if (endings.size() > name.size()) {
+    ending_index = endings.size() % name.size();
+  } else {
+    ending_index = name.size() % endings.size();
   }
   std::string ending = endings[ending_index];
 
@@ -69,6 +74,7 @@ int main() {
   std::string sentence =
       name + ", the "s + adjective + " "s + nouns[season] + " that "s + ending;
 
+  std::cout << "Here is your description:" << std::endl;
   // Print out the final results.
   std::cout << sentence << std::endl;
 }
