@@ -47,3 +47,6 @@ _deps
 # Build files and folders
 **/build/
 **/.cache/
+
+#vscode
+.vscode
