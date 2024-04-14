@@ -5,7 +5,7 @@ int main() {
   std::cout << "Please enter a string:" << std::endl;
 
   // Define the input string
-  std::string str{"hello world"};
+  std::string str{};
 
   // Ask the user for the input string
   std::getline(std::cin, str);

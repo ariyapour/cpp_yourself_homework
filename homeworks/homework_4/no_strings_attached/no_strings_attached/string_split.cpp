@@ -1,8 +1,7 @@
-#include <iostream>
 #include <no_strings_attached/string_split.h>
 namespace no_strings_attached {
-std::vector<std::string> Split(const std::string &str,
-                               const std::string &delimiter) {
+[[nodiscard]] std::vector<std::string> Split(const std::string &str,
+                                             const std::string &delimiter) {
   // Define the necessary variables
   std::string::size_type previous_delimiter_position{0};
   std::string::size_type next_delimiter_position{str.find(delimiter)};
@@ -30,9 +29,9 @@ std::vector<std::string> Split(const std::string &str,
   return splitted_strings;
 }
 
-std::vector<std::string> Split(const std::string &str,
-                               const std::string &delimiter,
-                               int number_of_chunks_to_keep) {
+[[nodiscard]] std::vector<std::string> Split(const std::string &str,
+                                             const std::string &delimiter,
+                                             int number_of_chunks_to_keep) {
   // Define the necessary variables
   std::string::size_type previous_delimiter_position{0};
   std::string::size_type next_delimiter_position{str.find(delimiter)};
