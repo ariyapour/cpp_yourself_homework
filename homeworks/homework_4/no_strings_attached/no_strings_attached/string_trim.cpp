@@ -3,6 +3,10 @@
 namespace no_strings_attached {
 [[nodiscard]] std::string Trim(const std::string &str, char char_to_trim,
                                Side side) {
+  // check if the input strin is empty. If so return an mpty string
+  if (str.empty()) {
+    return "";
+  }
   std::size_t trim_index_left{0};
   std::size_t trim_index_right{str.size() - 1};
   std::string result{};
@@ -35,6 +39,10 @@ namespace no_strings_attached {
 }
 
 [[nodiscard]] std::string Trim(const std::string &str) {
+  // check if the input strin is empty. If so return an mpty string
+  if (str.empty()) {
+    return "";
+  }
   std::size_t trim_index_left{0};
   std::size_t trim_index_right{str.size() - 1};
   std::string result{};
