@@ -15,7 +15,7 @@ namespace no_strings_attached {
     while (str.at(trim_index_left) == char_to_trim) {
       trim_index_left++;
     }
-    result = str.substr(trim_index_left, str.size() - 1);
+    result = str.substr(trim_index_left, str.size());
     break;
   case no_strings_attached::Side::kRight:
     while (str.at(trim_index_right) == char_to_trim) {
@@ -27,7 +27,7 @@ namespace no_strings_attached {
     while (str.at(trim_index_left) == char_to_trim) {
       trim_index_left++;
     }
-    result = str.substr(trim_index_left, str.size() - 1);
+    result = str.substr(trim_index_left, str.size());
     trim_index_right = result.size() - 1;
     while (result.at(trim_index_right) == char_to_trim) {
       trim_index_right--;
