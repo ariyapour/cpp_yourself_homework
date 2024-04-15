@@ -1,10 +1,14 @@
 cmake_minimum_required(VERSION 3.16..3.24)
-project(no_strings_attached VERSION 0.0.1
-                            DESCRIPTION "A library for splitting and trimming of strings"
-                            LANGUAGES CXX)
+project(
+  no_strings_attached
+  VERSION 0.0.1
+  DESCRIPTION "A library for splitting and trimming of strings"
+  LANGUAGES CXX)
 
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
+  set(CMAKE_BUILD_TYPE
+      Release
+      CACHE STRING "" FORCE)
 endif()
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 
@@ -17,6 +21,7 @@ target_include_directories(cxx_setup INTERFACE ${PROJECT_SOURCE_DIR})
 include(external/UpdateSubmodules.cmake)
 
 include(CTest)
+
 add_subdirectory(${PROJECT_NAME})
 add_subdirectory(examples)
 add_subdirectory(external)
