@@ -1,0 +1,3 @@
+[submodule "homeworks/homework_4/no_strings_attached/external/googletest"]
+	path = homeworks/homework_4/no_strings_attached/external/googletest
+	url = https://github.com/google/googletest.git
