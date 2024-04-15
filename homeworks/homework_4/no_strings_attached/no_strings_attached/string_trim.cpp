@@ -44,14 +44,14 @@ namespace no_strings_attached {
     return "";
   }
   std::size_t trim_index_left{0};
-  std::size_t trim_index_right{str.size() - 1};
+  
   std::string result{};
 
   while (str.at(trim_index_left) == ' ') {
     trim_index_left++;
   }
-  result = str.substr(trim_index_left, str.size() - 1);
-  trim_index_right = result.size() - 1;
+  result = str.substr(trim_index_left, str.size());
+  std::size_t trim_index_right{result.size() - 1};
   while (result.at(trim_index_right) == ' ') {
     trim_index_right--;
   }
