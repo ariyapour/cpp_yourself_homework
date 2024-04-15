@@ -50,3 +50,6 @@ _deps
 
 #vscode
 .vscode
+
+#Custom ignores
+grumpy.png
