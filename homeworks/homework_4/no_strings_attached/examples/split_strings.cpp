@@ -16,7 +16,7 @@ int main() {
   // Print the results
   std::cout << "Your split string:";
   for (const auto &str : results) {
-    std::cout << " '" << str << "' ";
+    std::cout << " '" << str << "'";
   }
   return 0;
 }
