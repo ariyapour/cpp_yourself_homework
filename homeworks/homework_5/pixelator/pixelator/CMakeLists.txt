@@ -6,7 +6,7 @@
 # - pixelate_image
 
 add_library(stb_image_data_view stb_image_data_view.cpp)
-target_link_libraries(stb_image_data_view PUBLIC cxx_setup stb::stb)
+target_link_libraries(stb_image_data_view PUBLIC cxx_setup stb::stb ftxui::screen)
 
 
 if(BUILD_TESTING)
