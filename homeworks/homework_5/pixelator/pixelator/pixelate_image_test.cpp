@@ -6,8 +6,8 @@
 #include "pixelator/pixelate_image.hpp"
 
 const std::filesystem::path image_path{"../../pixelator/test_data/grumpy.png"};
-const std::filesystem::path test_path{"../../pixelator/test_data/grumpy_pixelated_211_fixed.txt"};
-const int test_data_drawer_size = 211;
+const std::filesystem::path test_path{"../../pixelator/test_data/grumpy_pixelated_20_fixed.txt"};
+const int test_data_drawer_size = 20;
 
 
 TEST(pixelator_tests, test1){
