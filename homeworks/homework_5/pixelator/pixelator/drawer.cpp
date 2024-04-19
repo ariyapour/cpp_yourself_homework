@@ -35,3 +35,7 @@ void pixelator::Drawer::Draw() const {
   screen_.Print();
   return;
 }
+
+std::string pixelator::Drawer::ToString()const{
+  return screen_.ToString();
+}

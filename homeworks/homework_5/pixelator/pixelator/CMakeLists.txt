@@ -19,9 +19,13 @@ target_link_libraries(pixelate_image INTERFACE image stb_image_data_view)
 
 
 if(BUILD_TESTING)
-  include(GoogleTest)
   # TODO: Add your tests executable with all your tests here
   # Name it pixelator_tests.
   # Also use gtest_discover_tests(pixelator_tests)
   # to register them with CTest
+  add_executable(pixelate_image_test pixelate_image_test.cpp)
+  target_link_libraries(pixelate_image_test PRIVATE drawer stb_image_data_view pixelate_image GTest::gtest_main)
+
+  include(GoogleTest)
+  gtest_discover_tests(pixelate_image_test)
 endif()
