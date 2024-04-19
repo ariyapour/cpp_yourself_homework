@@ -12,7 +12,7 @@ private:
 public:
   Drawer() = default;
   Drawer(const ftxui::Dimensions &dimensions);
-  void Set(pixelator::image image);
+  void Set(pixelator::Image image);
   Size size() const;
   void Draw() const;
   std::string ToString()const;

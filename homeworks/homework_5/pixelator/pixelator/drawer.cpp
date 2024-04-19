@@ -1,5 +1,5 @@
-#include "pixelator/drawer.hpp"
 #include <iostream>
+#include "pixelator/drawer.hpp"
 pixelator::Drawer::Drawer(const ftxui::Dimensions &dimensions) {
   if (dimensions.dimx == ftxui::Dimension::Full().dimx &&
       dimensions.dimy == ftxui::Dimension::Full().dimy) {
@@ -12,7 +12,7 @@ pixelator::Drawer::Drawer(const ftxui::Dimensions &dimensions) {
   screen_ = ftxui::Screen::Create({rows_, cols_});
 }
 
-void pixelator::Drawer::Set(pixelator::image image) {
+void pixelator::Drawer::Set(pixelator::Image image) {
   for (int i = 0; i < image.rows(); i++) {
     for (int j = 0; j < image.cols(); j++) {
       auto &pixel_left = screen_.PixelAt(j * 2, i);

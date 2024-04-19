@@ -1,10 +1,9 @@
 #include <gtest/gtest.h>
 #include <fstream>
+#include <filesystem>
 #include "pixelator/drawer.hpp"
 #include "pixelator/stb_image_data_view.hpp"
 #include "pixelator/pixelate_image.hpp"
-#include <iostream>
-#include <filesystem>
 
 const std::filesystem::path image_path{"../../pixelator/test_data/grumpy.png"};
 const std::filesystem::path test_path{"../../pixelator/test_data/grumpy_pixelated_211_fixed.txt"};

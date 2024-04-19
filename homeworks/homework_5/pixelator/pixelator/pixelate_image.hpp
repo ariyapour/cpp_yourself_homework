@@ -1,14 +1,14 @@
 #pragma once
+#include<iostream>
 #include "pixelator/image.hpp"
 #include "pixelator/stb_image_data_view.hpp"
-#include <iostream>
 namespace pixelator {
 
 int Scale(int number, float factor) {
   return static_cast<int>(number * factor);
 }
 
-inline pixelator::image PixelateImage(pixelator::StbImageDataView &image_view,
+inline pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
                                       pixelator::Size new_size) {
   const auto factor_cols = new_size.col / static_cast<float>(image_view.cols());
   const auto factor_rows = new_size.row / static_cast<float>(image_view.rows());
@@ -17,7 +17,8 @@ inline pixelator::image PixelateImage(pixelator::StbImageDataView &image_view,
   const auto new_rows = Scale(image_view.rows(), smallest_factor);
   const auto new_cols = Scale(image_view.cols(), smallest_factor);
 
-  pixelator::image results(new_rows, new_cols);
+  pixelator::Image results(new_rows, new_cols);
+  
   // New size is bigger than original size. Dont resize. Return the original image
   // TODO: Check keeping the aspect retion carefully. there is a problem
   if (new_size.row > image_view.size().row &&
@@ -31,7 +32,9 @@ inline pixelator::image PixelateImage(pixelator::StbImageDataView &image_view,
     }
     return results;
   }
-
+  int x = 100;
+  int y = 150;
+  std::cout<<"Image at ----------------------------------------------:R: "<<image_view.at(x,y).red<<" G: "<<image_view.at(x,y).green<<" B: "<<image_view.at(x,y).blue<<std::endl;
   // Define a variable to store the number of pixels we should average
   const auto pixels_to_merge = static_cast<int>(1 / smallest_factor);
 
