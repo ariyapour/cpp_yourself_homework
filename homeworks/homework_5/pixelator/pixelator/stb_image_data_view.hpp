@@ -41,7 +41,7 @@ public:
   // Return the number of cols of the image
   int cols() const;
   // Return the color at a specific index
-  const ftxui::Color at(const int &row, const int &col) const;
+  Color at(const int &row, const int &col) const;
   // Move assignment operator
   StbImageDataView &operator=(StbImageDataView &&object);
   // Destructor
