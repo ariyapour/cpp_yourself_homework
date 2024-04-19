@@ -25,6 +25,7 @@ int main(int argc, char **argv) {
   Drawer drawer{ftxui::Dimension::Full()};
 
   drawer.Set(PixelateImage(image, drawer.size()));
+  std::cout<<"Our drawer size-------------------------: "<<drawer.size().row<<" X "<<drawer.size().col<<std::endl;
   drawer.Draw();
   return 0;
 }
