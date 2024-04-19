@@ -22,21 +22,7 @@ int main(int argc, char **argv) {
     std::cerr << "Image could not be loaded" << std::endl;
     exit(1);
   }
-
-  //--------My debugs
-  std::cout<<"Loaded image size: "<<image.rows()<<"x"<<image.cols()<<std::endl;
-
-  // StbImageDataView other_image = std::move(image);
-  // std::cout<<"other image After using move constructor with a loaded image: "<< other_image.rows()<<"x"<< other_image.cols()<<std::endl;
-  // StbImageDataView empty_image;
-  // std::cout<<"Empty image created. Image size: "<< empty_image.rows()<<"x"<< empty_image.cols()<<std::endl;
-  // empty_image = std::move(image);
-  // std::cout<<"Empty image assigned by other Image: "<< empty_image.rows()<<"x"<< empty_image.cols()<<std::endl;
-  //--------My debugs
-
-
   Drawer drawer{ftxui::Dimension::Full()};
-  std::cout<<"Terminal full rexolution: "<< drawer.size().row <<"x"<< drawer.size().col<<std::endl;
 
   drawer.Set(PixelateImage(image, drawer.size()));
   drawer.Draw();

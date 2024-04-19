@@ -7,9 +7,6 @@ const ftxui::Color kYellowishColor = ftxui::Color::RGB(255, 200, 100);
 
 int main() {
   const ftxui::Dimensions dimensions{ftxui::Dimension::Full()};
-  //My debugs-----------
-  // const ftxui::Dimensions dimensions{ftxui::Dimension::Fixed(42)};
-  //My debugs-----------
   ftxui::Screen screen{ftxui::Screen::Create(dimensions)};
   auto &pixel_left = screen.PixelAt(10, 10);
   pixel_left.background_color = kYellowishColor;

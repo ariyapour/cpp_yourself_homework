@@ -1,23 +1,22 @@
 #include "pixelator/image.hpp"
 
 pixelator::image::image(const int rows, const int cols)
-    : rows_{rows}, cols_{cols}, empty_{true} {
+    : rows_{rows}, cols_{cols} {
   image_data_.resize(rows_ * cols_ * channels_, ftxui::Color{});
 };
 
 pixelator::image::image(pixelator::image &&other_image)
     : rows_{other_image.rows_}, cols_{other_image.cols_},
-      channels_{other_image.channels_}, empty_{false},
+      channels_{other_image.channels_},
       image_data_{other_image.image_data_} {
   other_image.image_data_.clear();
   other_image.rows_ = 0;
   other_image.cols_ = 0;
   other_image.channels_ = 0;
-  other_image.empty_ = true;
 }
 
 bool pixelator::image::empty() const {
-  if (empty_ || (rows_ == 0 && cols_ == 0)) {
+  if (image_data_.empty()) {
     return true;
   }
   return false;
@@ -51,11 +50,9 @@ pixelator::image &pixelator::image::operator=(pixelator::image &&other_image) {
   rows_ = other_image.rows_;
   cols_ = other_image.cols_;
   channels_ = other_image.channels_;
-  empty_ = false;
   other_image.rows_ = 0;
   other_image.cols_ = 0;
   other_image.channels_ = 0;
-  other_image.empty_ = true;
 
   return *this;
 }

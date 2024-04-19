@@ -4,8 +4,6 @@
 #include <iostream>
 
 pixelator::StbImageDataView::StbImageDataView(const std::string &image_path) {
-  // TODO: The last argument is kLoadAllChannels that we set 0 for now. figure
-  // out how should we do it for the calss or should we leave it as it is
   image_data_ =
       stbi_load(image_path.c_str(), &size_.col, &size_.row, &size_.channel, 0);
   if (!image_data_) {

@@ -10,25 +10,18 @@ int Scale(int number, float factor) {
 
 inline pixelator::image PixelateImage(pixelator::StbImageDataView &image_view,
                                       pixelator::Size new_size) {
-
-  std::cout << "[DEBUG]New size: " << new_size.row << "x" << new_size.col
-            << std::endl;
   const auto factor_cols = new_size.col / static_cast<float>(image_view.cols());
   const auto factor_rows = new_size.row / static_cast<float>(image_view.rows());
   const auto smallest_factor = std::min(factor_cols, factor_rows);
 
   const auto new_rows = Scale(image_view.rows(), smallest_factor);
   const auto new_cols = Scale(image_view.cols(), smallest_factor);
-  std::cout << "[DEBUG]new rows: " << new_rows << std::endl;
-  std::cout << "[DEBUG]new cols: " << new_cols << std::endl;
 
   pixelator::image results(new_rows, new_cols);
-  // New size is bigger than original size. Dont resize. Return the same image
-  // height and width as the original image.
+  // New size is bigger than original size. Dont resize. Return the original image
   // TODO: Check keeping the aspect retion carefully. there is a problem
   if (new_size.row > image_view.size().row &&
       new_size.col > image_view.size().col) {
-    std::cout << "[DEBUG]No resizing. Returning original image!" << std::endl;
     for (int i = 0; i < image_view.rows(); i++) {
       for (int j = 0; j < image_view.cols(); j++) {
         results.at(i, j) = ftxui::Color::RGB(image_view.at(i, j).red,
@@ -43,7 +36,7 @@ inline pixelator::image PixelateImage(pixelator::StbImageDataView &image_view,
   const auto pixels_to_merge = static_cast<int>(1 / smallest_factor);
 
   // Loop through the new image and set each pixels value with the average of
-  // the pixels in the original image with a window of pixels_to_mergex X
+  // the pixels in the original image by a window of pixels_to_mergex X
   // pixels_to_merge size.
   for (int i = 0; i < new_rows; i++) {
     for (int j = 0; j < new_cols; j++) {

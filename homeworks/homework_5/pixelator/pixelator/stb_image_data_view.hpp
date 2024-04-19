@@ -22,7 +22,7 @@ class StbImageDataView {
 private:
   // Image size member function initialized with all values 0
   Size size_{Size{0, 0, 0}};
-  // Actual image data which are pixel color values
+  // Image data (pixel color values)
   unsigned char *image_data_{nullptr};
 
 public:

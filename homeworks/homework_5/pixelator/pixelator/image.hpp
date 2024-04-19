@@ -10,10 +10,6 @@ private:
   int rows_{};
   int cols_{};
   int channels_{3};
-  // Since we want tor reserve the data on construction time we create a bool
-  // flag to indicate if the content is manupulated or is it the initialized and
-  // reserved version
-  bool empty_{true};
   std::vector<ftxui::Color> image_data_{};
 
 public:
