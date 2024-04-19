@@ -1,5 +1,5 @@
-// #include "pixelator/drawer.hpp"
-// #include "pixelator/pixelate_image.hpp"
+#include "pixelator/drawer.hpp"
+#include "pixelator/pixelate_image.hpp"
 #include "pixelator/stb_image_data_view.hpp"
 
 #include <cstddef>
@@ -8,8 +8,8 @@
 #include <utility>
 
 namespace {
-// using pixelator::Drawer;
-// using pixelator::PixelateImage;
+using pixelator::Drawer;
+using pixelator::PixelateImage;
 using pixelator::StbImageDataView;
 }  // namespace
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
   }
 
   //--------My debugs
-  // std::cout<<"Loaded image size: "<<image.rows()<<"x"<<image.cols()<<std::endl;
+  std::cout<<"Loaded image size: "<<image.rows()<<"x"<<image.cols()<<std::endl;
 
   // StbImageDataView other_image = std::move(image);
   // std::cout<<"other image After using move constructor with a loaded image: "<< other_image.rows()<<"x"<< other_image.cols()<<std::endl;
@@ -35,9 +35,10 @@ int main(int argc, char **argv) {
   //--------My debugs
 
 
-  // Drawer drawer{ftxui::Dimension::Full()};
+  Drawer drawer{ftxui::Dimension::Full()};
+  std::cout<<"Terminal full rexolution: "<< drawer.size().row <<"x"<< drawer.size().col<<std::endl;
 
-  // drawer.Set(PixelateImage(image, drawer.size()));
-  // drawer.Draw();
+  drawer.Set(PixelateImage(image, drawer.size()));
+  drawer.Draw();
   return 0;
 }

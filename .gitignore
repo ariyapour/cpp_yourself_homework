@@ -52,4 +52,4 @@ _deps
 .vscode
 
 #Custom ignores
-grumpy.png
+*.png
