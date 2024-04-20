@@ -32,9 +32,6 @@ inline pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
     }
     return results;
   }
-  int x = 100;
-  int y = 150;
-  std::cout<<"Image at ----------------------------------------------:R: "<<image_view.at(x,y).red<<" G: "<<image_view.at(x,y).green<<" B: "<<image_view.at(x,y).blue<<std::endl;
   // Define a variable to store the number of pixels we should average
   const auto pixels_to_merge = static_cast<int>(1 / smallest_factor);
 

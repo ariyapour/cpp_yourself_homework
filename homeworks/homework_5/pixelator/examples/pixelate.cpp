@@ -4,9 +4,7 @@
 
 #include <cstddef>
 #include <filesystem>
-#include <iostream>
 #include <utility>
-
 namespace {
 using pixelator::Drawer;
 using pixelator::PixelateImage;
@@ -21,6 +19,7 @@ int main(int argc, char **argv) {
     std::cerr << "Image could not be loaded" << std::endl;
     exit(1);
   }
+
   Drawer drawer{ftxui::Dimension::Full()};
 
   drawer.Set(PixelateImage(image, drawer.size()));
