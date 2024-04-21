@@ -62,7 +62,7 @@ inline pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
 
       // Set the new pixel in the new image with the average value.
       results.at(i, j) = ftxui::Color::RGB(
-          average_color.red, average_color.green, average_color.blue);
+          static_cast<int>(average_color.red), static_cast<int>(average_color.green), static_cast<int>(average_color.blue));
     }
   }
 
