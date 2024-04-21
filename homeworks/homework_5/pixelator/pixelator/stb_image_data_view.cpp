@@ -30,11 +30,11 @@ int pixelator::StbImageDataView::rows() const { return size_.rows; }
 
 int pixelator::StbImageDataView::cols() const { return size_.cols; }
 
-pixelator::Color pixelator::StbImageDataView::at(const int &row,
+ftxui::Color pixelator::StbImageDataView::at(const int &row,
                                                  const int &col) const {
   const auto index{size_.channel * (row * size_.cols + col)};
-  return pixelator::Color{image_data_[index], image_data_[index + 1],
-                          image_data_[index + 2]};
+  return ftxui::Color::RGB(image_data_[index], image_data_[index + 1],
+                          image_data_[index + 2]);
 }
 
 pixelator::StbImageDataView &

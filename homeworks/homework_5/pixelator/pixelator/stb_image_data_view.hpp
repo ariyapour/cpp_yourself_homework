@@ -8,7 +8,7 @@ namespace pixelator {
 struct Size {
   int rows;
   int cols;
-  int channel;
+  int channel{3};
 };
 
 // A struct to store colors
@@ -41,7 +41,7 @@ public:
   // Return the number of cols of the image
   int cols() const;
   // Return the color at a specific index
-  Color at(const int &row, const int &col) const;
+  ftxui::Color at(const int &row, const int &col) const;
   // Move assignment operator
   StbImageDataView &operator=(StbImageDataView &&object);
   // Destructor
