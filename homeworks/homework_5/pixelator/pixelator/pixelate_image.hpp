@@ -8,7 +8,7 @@ int Scale(int number, float factor) {
   return static_cast<int>(number * factor);
 }
 
-inline pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
+pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
                                       pixelator::Size new_size) {
   const auto factor_cols = new_size.col / static_cast<float>(image_view.cols());
   const auto factor_rows = new_size.row / static_cast<float>(image_view.rows());

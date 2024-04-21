@@ -5,10 +5,13 @@
 #include "pixelator/stb_image_data_view.hpp"
 #include "pixelator/pixelate_image.hpp"
 #include "pixelator/test_global_variables.hpp"
-
+#include <iostream>
 
 TEST(pixelator_tests, test1){
     pixelator::StbImageDataView image{pixelator_tests::image_path};
+    std::cerr<<"Loded image size: "<< image.size().row<< " X "<< image.size().col<<std::endl;
+    pixelator::Color color = image.at(pixelator_tests::test_pixel_x,pixelator_tests::test_pixel_y);
+    std::cerr<<"Image color at 100X150: "<< color.red<< " "<< color.green<< " "<< color.blue<<std::endl;
 
     //Load the test data
     std::ifstream inFile;
