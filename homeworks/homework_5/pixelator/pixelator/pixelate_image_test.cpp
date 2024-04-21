@@ -22,6 +22,8 @@ TEST(pixelator_tests, test1){
     
     //Perform pixelation
     pixelator::Drawer drawer{ftxui::Dimension::Fixed(pixelator_tests::test_data_drawer_size)};
-    drawer.Set(pixelator::PixelateImage(image, drawer.size()));
+    pixelator::Image pixelated_image = pixelator::PixelateImage(image, drawer.size());
+    std::cerr<<"Pixelated image size: "<<pixelated_image.size().row<<"X"<< pixelated_image.size().col<<std::endl;
+    drawer.Set(pixelated_image);
     EXPECT_EQ(drawer.ToString(), test_data) << "Computed results: "<< std::endl << drawer.ToString()<< std::endl<<"Test data: "<< std::endl << test_data<<std::endl;
 }
