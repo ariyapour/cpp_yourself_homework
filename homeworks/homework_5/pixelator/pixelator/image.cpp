@@ -1,10 +1,12 @@
 #include "pixelator/image.hpp"
 
 pixelator::Image::Image(pixelator::Size size)
-    : rows_{size.rows}, cols_{size.cols}, image_data_(size.rows * size.cols){};
+    : rows_{size.rows}, cols_{size.cols}{
+      image_data_.resize(size.rows * size.cols * channels_, ftxui::Color{});
+};
 
 pixelator::Image::Image(const int rows, const int cols)
-    : rows_{rows}, cols_{cols} {
+    : rows_{rows}, cols_{cols}{
   image_data_.resize(rows_ * cols_ * channels_, ftxui::Color{});
 };
 
