@@ -23,7 +23,8 @@ public:
   bool empty() const;
   int rows() const;
   int cols() const;
-  pixelator::Size size() const;
+  pixelator::Size size();
+  const pixelator::Size size() const;
   const ftxui::Color &at(int row, int col) const;
   ftxui::Color &at(int row, int col);
   // Move assignment operator

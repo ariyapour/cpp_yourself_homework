@@ -1,6 +1,6 @@
 #include "pixelator/drawer.hpp"
 #include <iostream>
-pixelator::Drawer::Drawer(const ftxui::Dimensions &dimensions) {
+pixelator::Drawer::Drawer(const ftxui::Dimensions dimensions) {
   if (dimensions.dimx == ftxui::Dimension::Full().dimx &&
       dimensions.dimy == ftxui::Dimension::Full().dimy) {
     rows_ = ftxui::Dimension::Full().dimx;
@@ -16,7 +16,7 @@ int pixelator::Drawer::rows() const { return rows_; }
 
 int pixelator::Drawer::cols() const { return cols_; }
 
-pixelator::Size pixelator::Drawer::size() const {
+const pixelator::Size pixelator::Drawer::size() const {
   return pixelator::Size{rows_, cols_};
 }
 

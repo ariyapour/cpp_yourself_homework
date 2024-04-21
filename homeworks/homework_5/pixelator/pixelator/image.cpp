@@ -22,17 +22,18 @@ pixelator::Image::Image(pixelator::Image &other_image)
       channels_{other_image.channels_}, image_data_{other_image.image_data_} {}
 
 bool pixelator::Image::empty() const {
-  if (image_data_.empty()) {
-    return true;
-  }
-  return false;
+  return image_data_.empty();
 }
 
 int pixelator::Image::rows() const { return rows_; }
 
 int pixelator::Image::cols() const { return cols_; }
 
-pixelator::Size pixelator::Image::size() const {
+pixelator::Size pixelator::Image::size() {
+  return pixelator::Size{rows_, cols_};
+}
+
+const pixelator::Size pixelator::Image::size() const{
   return pixelator::Size{rows_, cols_};
 }
 
