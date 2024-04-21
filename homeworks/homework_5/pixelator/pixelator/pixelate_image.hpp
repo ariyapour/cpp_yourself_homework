@@ -60,6 +60,7 @@ pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
       average_color.green /= pixels_to_merge * pixels_to_merge;
       average_color.blue /= pixels_to_merge * pixels_to_merge;
 
+      std::cerr<<"Setting new color: "<< average_color.red<< " "<< average_color.green<< " "<< average_color.blue<<std::endl;
       // Set the new pixel in the new image with the average value.
       results.at(i, j) = ftxui::Color::RGB(
           static_cast<int>(average_color.red), static_cast<int>(average_color.green), static_cast<int>(average_color.blue));
