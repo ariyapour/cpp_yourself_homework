@@ -27,7 +27,7 @@ if(BUILD_TESTING)
   # Also use gtest_discover_tests(pixelator_tests)
   # to register them with CTest
   add_executable(pixelate_image_test pixelate_image_test.cpp)
-  target_link_libraries(pixelate_image_test PRIVATE drawer stb_image_data_view pixelate_image test_global_variables GTest::gtest_main)
+  target_link_libraries(pixelate_image_test PRIVATE pixelate_image test_global_variables GTest::gtest_main)
 
   add_executable(drawer_test drawer_test.cpp)
   target_link_libraries(drawer_test PRIVATE drawer GTest::gtest_main)

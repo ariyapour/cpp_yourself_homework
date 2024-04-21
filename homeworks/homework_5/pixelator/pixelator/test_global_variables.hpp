@@ -4,8 +4,7 @@
 namespace pixelator_tests{
     const std::filesystem::path image_path{"../../pixelator/test_data/test_grumpy.png"};
     const std::filesystem::path pixelator_image_path{"../../pixelator/test_data/test.png"};
-    const std::filesystem::path test_path{"../../pixelator/test_data/test_grumpy_pixelated.txt"};
-    const int pixelator_drawer_size = 3;
+    const int pixelator_test_new_size = 3;
 
     //coordinates of test pixel in test image
     const int test_pixel_x = 100;
