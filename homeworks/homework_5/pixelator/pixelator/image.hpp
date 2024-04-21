@@ -1,7 +1,7 @@
 #pragma once
-#include <vector>
 #include "ftxui/screen/color.hpp"
 #include "pixelator/stb_image_data_view.hpp"
+#include <vector>
 
 namespace pixelator {
 
@@ -17,7 +17,7 @@ public:
   Image(const pixelator::Size size);
   // Move constructor
   Image(Image &&other_image);
-  //copy constructor
+  // copy constructor
   Image(Image &other_image);
   Image(const int rows, const int cols);
   bool empty() const;

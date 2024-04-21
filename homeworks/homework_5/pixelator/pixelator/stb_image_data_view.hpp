@@ -8,7 +8,6 @@ namespace pixelator {
 struct Size {
   int rows;
   int cols;
-  int channel{3};
 };
 
 // A struct to store colors
@@ -21,7 +20,9 @@ struct Color {
 class StbImageDataView {
 private:
   // Image size member function initialized with all values 0
-  Size size_{Size{0, 0, 0}};
+  int rows_{};
+  int cols_{};
+  int channels_{};
   // Image data (pixel color values)
   unsigned char *image_data_{nullptr};
 

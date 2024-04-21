@@ -1,7 +1,7 @@
 #pragma once
-#include<iostream>
 #include "pixelator/image.hpp"
 #include "pixelator/stb_image_data_view.hpp"
+#include <iostream>
 namespace pixelator {
 
 int Scale(int number, float factor) {
@@ -9,17 +9,20 @@ int Scale(int number, float factor) {
 }
 
 pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
-                                      pixelator::Size new_size) {
-  const auto factor_cols = new_size.cols / static_cast<float>(image_view.cols());
-  const auto factor_rows = new_size.rows / static_cast<float>(image_view.rows());
+                               pixelator::Size new_size) {
+  const auto factor_cols =
+      new_size.cols / static_cast<float>(image_view.cols());
+  const auto factor_rows =
+      new_size.rows / static_cast<float>(image_view.rows());
   const auto smallest_factor = std::min(factor_cols, factor_rows);
 
   const auto new_rows = Scale(image_view.rows(), smallest_factor);
   const auto new_cols = Scale(image_view.cols(), smallest_factor);
 
   pixelator::Image results(new_rows, new_cols);
-  
-  // New size is bigger than original size. Dont resize. Return the original image
+
+  // New size is bigger than original size. Dont resize. Return the original
+  // image
   // TODO: Check keeping the aspect retion carefully. there is a problem
   if (new_size.rows > image_view.size().rows &&
       new_size.cols > image_view.size().cols) {
@@ -30,7 +33,6 @@ pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
     }
     return results;
   }
-
 
   for (int i = 0; i < new_rows; i++) {
     for (int j = 0; j < new_cols; j++) {

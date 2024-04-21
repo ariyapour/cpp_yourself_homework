@@ -17,6 +17,6 @@ public:
   Size size() const;
   void Set(pixelator::Image image);
   void Draw() const;
-  std::string ToString()const;
+  std::string ToString() const;
 };
 } // namespace pixelator

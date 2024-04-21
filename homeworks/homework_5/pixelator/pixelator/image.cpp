@@ -1,8 +1,7 @@
 #include "pixelator/image.hpp"
 
 pixelator::Image::Image(pixelator::Size size)
-    :rows_{size.rows}, cols_{size.cols}, image_data_(size.rows*size.cols){
-};
+    : rows_{size.rows}, cols_{size.cols}, image_data_(size.rows * size.cols){};
 
 pixelator::Image::Image(const int rows, const int cols)
     : rows_{rows}, cols_{cols} {
@@ -11,8 +10,7 @@ pixelator::Image::Image(const int rows, const int cols)
 
 pixelator::Image::Image(pixelator::Image &&other_image)
     : rows_{other_image.rows_}, cols_{other_image.cols_},
-      channels_{other_image.channels_},
-      image_data_{other_image.image_data_} {
+      channels_{other_image.channels_}, image_data_{other_image.image_data_} {
   other_image.image_data_.clear();
   other_image.rows_ = 0;
   other_image.cols_ = 0;
@@ -21,8 +19,7 @@ pixelator::Image::Image(pixelator::Image &&other_image)
 
 pixelator::Image::Image(pixelator::Image &other_image)
     : rows_{other_image.rows_}, cols_{other_image.cols_},
-      channels_{other_image.channels_},
-      image_data_{other_image.image_data_} {}
+      channels_{other_image.channels_}, image_data_{other_image.image_data_} {}
 
 bool pixelator::Image::empty() const {
   if (image_data_.empty()) {
@@ -36,7 +33,7 @@ int pixelator::Image::rows() const { return rows_; }
 int pixelator::Image::cols() const { return cols_; }
 
 pixelator::Size pixelator::Image::size() const {
-  return pixelator::Size{rows_, cols_, channels_};
+  return pixelator::Size{rows_, cols_};
 }
 
 ftxui::Color &pixelator::Image::at(int row, int col) {
