@@ -6,8 +6,8 @@
 namespace pixelator {
 // A struct to store image size
 struct Size {
-  int row;
-  int col;
+  int rows;
+  int cols;
   int channel;
 };
 

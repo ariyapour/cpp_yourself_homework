@@ -10,8 +10,8 @@ int Scale(int number, float factor) {
 
 pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
                                       pixelator::Size new_size) {
-  const auto factor_cols = new_size.col / static_cast<float>(image_view.cols());
-  const auto factor_rows = new_size.row / static_cast<float>(image_view.rows());
+  const auto factor_cols = new_size.cols / static_cast<float>(image_view.cols());
+  const auto factor_rows = new_size.rows / static_cast<float>(image_view.rows());
   const auto smallest_factor = std::min(factor_cols, factor_rows);
 
   const auto new_rows = Scale(image_view.rows(), smallest_factor);
@@ -21,8 +21,8 @@ pixelator::Image PixelateImage(pixelator::StbImageDataView &image_view,
   
   // New size is bigger than original size. Dont resize. Return the original image
   // TODO: Check keeping the aspect retion carefully. there is a problem
-  if (new_size.row > image_view.size().row &&
-      new_size.col > image_view.size().col) {
+  if (new_size.rows > image_view.size().rows &&
+      new_size.cols > image_view.size().cols) {
     for (int i = 0; i < image_view.rows(); i++) {
       for (int j = 0; j < image_view.cols(); j++) {
         results.at(i, j) = ftxui::Color::RGB(image_view.at(i, j).red,

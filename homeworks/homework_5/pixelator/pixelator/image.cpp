@@ -1,7 +1,7 @@
 #include "pixelator/image.hpp"
 
 pixelator::Image::Image(pixelator::Size size)
-    :rows_{size.row}, cols_{size.col}, image_data_(size.row*size.col){
+    :rows_{size.rows}, cols_{size.cols}, image_data_(size.rows*size.cols){
 };
 
 pixelator::Image::Image(const int rows, const int cols)

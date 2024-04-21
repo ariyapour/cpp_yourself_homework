@@ -15,8 +15,8 @@ TEST(image_tests, test1){
     EXPECT_EQ(image.rows(),42);
     EXPECT_EQ(image.cols(),23);
     EXPECT_EQ(image.empty(),false);
-    EXPECT_EQ(image.size().row, 42);
-    EXPECT_EQ(image.size().col, 23); 
+    EXPECT_EQ(image.size().rows, 42);
+    EXPECT_EQ(image.size().cols, 23); 
 }
 
 TEST(image_tests, test2){

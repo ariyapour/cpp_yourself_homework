@@ -5,7 +5,7 @@
 
 pixelator::StbImageDataView::StbImageDataView(const std::string &image_path) {
   image_data_ =
-      stbi_load(image_path.c_str(), &size_.col, &size_.row, &size_.channel, 0);
+      stbi_load(image_path.c_str(), &size_.cols, &size_.rows, &size_.channel, 0);
   if (!image_data_) {
     std::cerr << "Failed to load image data from file: " << image_path
               << std::endl;
@@ -26,13 +26,13 @@ bool pixelator::StbImageDataView::empty() const {
   return (image_data_ == nullptr) ? true : false;
 }
 
-int pixelator::StbImageDataView::rows() const { return size_.row; }
+int pixelator::StbImageDataView::rows() const { return size_.rows; }
 
-int pixelator::StbImageDataView::cols() const { return size_.col; }
+int pixelator::StbImageDataView::cols() const { return size_.cols; }
 
 pixelator::Color pixelator::StbImageDataView::at(const int &row,
                                                  const int &col) const {
-  const auto index{size_.channel * (row * size_.col + col)};
+  const auto index{size_.channel * (row * size_.cols + col)};
   return pixelator::Color{image_data_[index], image_data_[index + 1],
                           image_data_[index + 2]};
 }
@@ -48,8 +48,8 @@ pixelator::StbImageDataView::operator=(StbImageDataView &&object) {
   image_data_ = object.image_data_;
   size_ = object.size();
 
-  object.size_.row = 0;
-  object.size_.col = 0;
+  object.size_.rows = 0;
+  object.size_.cols = 0;
   object.size_.channel = 0;
   object.image_data_ = nullptr;
 

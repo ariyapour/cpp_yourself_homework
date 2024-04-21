@@ -10,8 +10,8 @@ TEST(stb_image_data_view_tests, test1){
     pixelator::Color color = image.at(pixelator_tests::test_pixel_x,pixelator_tests::test_pixel_y);
 
 
-    EXPECT_EQ(size.row, pixelator_tests::test_image_rows);
-    EXPECT_EQ(size.col, pixelator_tests::test_image_cols);
+    EXPECT_EQ(size.rows, pixelator_tests::test_image_rows);
+    EXPECT_EQ(size.cols, pixelator_tests::test_image_cols);
     EXPECT_EQ(image.empty(), false);
     EXPECT_EQ(empty_image.empty(), true);
     EXPECT_EQ(color.red, pixelator_tests::test_pixel_color.red);
