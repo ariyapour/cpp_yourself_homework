@@ -1,5 +1,9 @@
 #include "pixelator/image.hpp"
 
+pixelator::Image::Image(pixelator::Size size)
+    :rows_{size.row}, cols_{size.col}, image_data_(size.row*size.col){
+};
+
 pixelator::Image::Image(const int rows, const int cols)
     : rows_{rows}, cols_{cols} {
   image_data_.resize(rows_ * cols_ * channels_, ftxui::Color{});

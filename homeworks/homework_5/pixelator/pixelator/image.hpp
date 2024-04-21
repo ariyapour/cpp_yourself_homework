@@ -14,6 +14,7 @@ private:
 
 public:
   Image() = default;
+  Image(const pixelator::Size size);
   // Move constructor
   Image(Image &&other_image);
   //copy constructor

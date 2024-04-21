@@ -12,6 +12,18 @@ pixelator::Drawer::Drawer(const ftxui::Dimensions &dimensions) {
   screen_ = ftxui::Screen::Create({rows_, cols_});
 }
 
+int pixelator::Drawer::rows() const{
+  return rows_;
+}
+
+int pixelator::Drawer::cols() const{
+  return cols_;
+}
+
+pixelator::Size pixelator::Drawer::size() const {
+  return pixelator::Size{rows_, cols_, 3};
+}
+
 void pixelator::Drawer::Set(pixelator::Image image) {
   for (int i = 0; i < image.rows(); i++) {
     for (int j = 0; j < image.cols(); j++) {
@@ -25,10 +37,6 @@ void pixelator::Drawer::Set(pixelator::Image image) {
   }
 
   return;
-}
-
-pixelator::Size pixelator::Drawer::size() const {
-  return pixelator::Size{rows_, cols_, 3};
 }
 
 void pixelator::Drawer::Draw() const {
