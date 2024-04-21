@@ -8,22 +8,13 @@
 #include <iostream>
 
 TEST(pixelator_tests, test1){
-    pixelator::StbImageDataView image{pixelator_tests::image_path};
-    std::cerr<<"Loded image size: "<< image.size().row<< " X "<< image.size().col<<std::endl;
-    pixelator::Color color = image.at(pixelator_tests::test_pixel_x,pixelator_tests::test_pixel_y);
-    std::cerr<<"Image color at 100X150: "<< color.red<< " "<< color.green<< " "<< color.blue<<std::endl;
+    pixelator::StbImageDataView image{pixelator_tests::pixelator_image_path};
 
-    //Load the test data
-    std::ifstream inFile;
-    inFile.open(pixelator_tests::test_path);
-    std::stringstream strStream;
-    strStream << inFile.rdbuf();
-    std::string test_data = strStream.str();
+    const std::string test_data = "\x1B[39m\x1B[48;2;0;0;0m   \x1B[39m\x1B[49m\r\n\x1B[39m\x1B[48;2;127;127;127m   \x1B[39m\x1B[49m\r\n\x1B[39m\x1B[48;2;255;255;255m   \x1B[39m\x1B[49m\r\n   \r\n   \r\n   ";
     
     //Perform pixelation
-    pixelator::Drawer drawer{ftxui::Dimension::Fixed(pixelator_tests::test_data_drawer_size)};
+    pixelator::Drawer drawer{ftxui::Dimension::Fixed(pixelator_tests::pixelator_drawer_size)};
     pixelator::Image pixelated_image = pixelator::PixelateImage(image, drawer.size());
-    std::cerr<<"Pixelated image size: "<<pixelated_image.size().row<<"X"<< pixelated_image.size().col<<std::endl;
     drawer.Set(pixelated_image);
-    EXPECT_EQ(drawer.ToString(), test_data) << "Computed results: "<< std::endl << drawer.ToString()<< std::endl<<"Test data: "<< std::endl << test_data<<std::endl;
+    EXPECT_EQ(drawer.ToString(), test_data);
 }
