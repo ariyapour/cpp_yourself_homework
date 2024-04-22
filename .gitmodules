@@ -1,3 +1,12 @@
 [submodule "homeworks/homework_4/no_strings_attached/external/googletest"]
 	path = homeworks/homework_4/no_strings_attached/external/googletest
 	url = https://github.com/google/googletest.git
+[submodule "homeworks/homework_5/pixelator/external/ftxui"]
+	path = homeworks/homework_5/pixelator/external/ftxui
+	url = https://github.com/ArthurSonzogni/FTXUI.git
+[submodule "homeworks/homework_5/pixelator/external/googletest"]
+	path = homeworks/homework_5/pixelator/external/googletest
+	url = https://github.com/google/googletest.git
+[submodule "homeworks/homework_5/pixelator/external/stb"]
+	path = homeworks/homework_5/pixelator/external/stb
+	url = https://github.com/nothings/stb.git
