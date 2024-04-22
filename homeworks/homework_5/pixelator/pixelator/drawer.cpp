@@ -1,5 +1,7 @@
 #include "pixelator/drawer.hpp"
 #include <iostream>
+#include <algorithm>
+
 pixelator::Drawer::Drawer(const ftxui::Dimensions dimensions) {
   if (dimensions.dimx == ftxui::Dimension::Full().dimx &&
       dimensions.dimy == ftxui::Dimension::Full().dimy) {
@@ -40,4 +42,15 @@ void pixelator::Drawer::Draw() const {
   return;
 }
 
-std::string pixelator::Drawer::ToString() const { return screen_.ToString(); }
+std::string pixelator::Drawer::ToString() const {
+  std::string string_image = screen_.ToString();
+
+  //Remove new line characters from the end of the string
+
+  while (!string_image.empty() && (string_image[string_image.size() - 1] == '\r' || string_image[string_image.size() - 1] == '\n') )
+  {
+    string_image.erase(string_image.size() - 1);
+  }
+  
+  return string_image;
+}
