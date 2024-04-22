@@ -1,6 +1,6 @@
 #include "pixelator/drawer.hpp"
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 
 pixelator::Drawer::Drawer(const ftxui::Dimensions dimensions) {
   if (dimensions.dimx == ftxui::Dimension::Full().dimx &&
@@ -45,12 +45,16 @@ void pixelator::Drawer::Draw() const {
 std::string pixelator::Drawer::ToString() const {
   std::string string_image = screen_.ToString();
 
-  //Remove new line characters from the end of the string
-
-  while (!string_image.empty() && (string_image[string_image.size() - 1] == '\r' || string_image[string_image.size() - 1] == '\n') )
-  {
+  // Remove new line characters from the end of the string
+  // TODO: I added removing of the new line characters here since I was getting
+  // testing errors in github but not on local machine. I did not perform
+  // extensive test when I added this.
+  while (!string_image.empty() &&
+         (string_image[string_image.size() - 1] == '\r' ||
+          string_image[string_image.size() - 1] == '\n' ||
+          string_image[string_image.size() - 1] == ' ')) {
     string_image.erase(string_image.size() - 1);
   }
-  
+
   return string_image;
 }
