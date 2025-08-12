@@ -42,11 +42,12 @@ int main(){
         //Ask the user to provide their next guess:
         std::cout<<"Please provide the next guess: ";
         std::cin>> user_guess;
-
+        number_of_guesses++;
+        
         //Check the user guess
         if(user_guess == random_number_to_guess){
             //Increment the guess counter by 1
-            number_of_guesses++;
+            
             std::cout<<"You've done it! You guessed the number "<< random_number_to_guess<<" in "<< number_of_guesses<< " guesses!"<<std::endl;
             break;
         }else if(user_guess < random_number_to_guess){
