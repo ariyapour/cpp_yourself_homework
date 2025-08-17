@@ -22,7 +22,7 @@ const pixelator::Size pixelator::Drawer::size() const {
   return pixelator::Size{rows_, cols_};
 }
 
-void pixelator::Drawer::Set(pixelator::Image image) {
+void pixelator::Drawer::Set(const pixelator::Image& image) {
   for (int i = 0; i < image.rows(); i++) {
     for (int j = 0; j < image.cols(); j++) {
       auto &pixel_left = screen_.PixelAt(j * 2, i);

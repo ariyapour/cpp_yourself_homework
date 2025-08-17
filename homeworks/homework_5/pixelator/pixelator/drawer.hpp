@@ -15,7 +15,7 @@ public:
   int rows() const;
   int cols() const;
   const Size size() const;
-  void Set(pixelator::Image image);
+  void Set(const pixelator::Image& image);
   void Draw() const;
   std::string ToString() const;
 };
