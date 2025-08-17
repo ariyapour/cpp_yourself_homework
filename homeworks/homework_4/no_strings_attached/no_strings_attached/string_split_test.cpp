@@ -31,3 +31,9 @@ TEST(StringSplit, test5){
     std::vector<std::string> expected_result = std::vector<std::string>{"", "ab"};
     EXPECT_EQ(computed_result, expected_result);
 }
+
+TEST(StringSplit, MultiCharDelimiterBeginningMiddleEnd){
+  std::vector<std::string> computed_results = no_strings_attached::Split("aaabaabaaa", "aa");
+  std::vector<std::string> expected_results{"", "ab", "b", "a"};
+  EXPECT_EQ(computed_results, expected_results);
+}

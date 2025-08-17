@@ -9,7 +9,6 @@ class Image {
 private:
   int rows_{};
   int cols_{};
-  int channels_{3};
   std::vector<ftxui::Color> image_data_{};
 
 public:

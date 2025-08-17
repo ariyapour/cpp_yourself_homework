@@ -18,7 +18,7 @@ int main() {
   std::cout << "Please enter your name:"s << std::endl;
   std::cin >> name;
 
-  // Define the seasn the user was born
+  // Define the season the user was born
   std::string season{};
 
   // Ask the user when they were born
@@ -41,7 +41,7 @@ int main() {
   // and name
   std::string adjective = adjectives[name.size() % adjectives.size()];
 
-  // Define the noun map datastructure
+  // Define the noun map data structure
   std::map<std::string, std::string> nouns = {
       {"spring", "STL guru"},
       {"summer", "C++ expert"},
