@@ -1,7 +1,7 @@
 #include "pixelator/drawer.hpp"
 #include <gtest/gtest.h>
 
-TEST(drawer_tests, test2) {
+TEST(drawer_tests, FullAndFixedDrawerSizes) {
   pixelator::Drawer full_screen_drawer{ftxui::Dimension::Full()};
   pixelator::Drawer fixed_screen_drawer{ftxui::Dimension::Fixed(42)};
 

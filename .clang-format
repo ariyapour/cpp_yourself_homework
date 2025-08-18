@@ -1,0 +1,5 @@
+BasedOnStyle: Google
+ColumnLimit: 80          # Change this to your preferred line length
+BreakBeforeBraces: Attach
+AllowShortFunctionsOnASingleLine: false
+ReflowComments: true

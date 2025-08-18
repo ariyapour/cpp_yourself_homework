@@ -1,7 +1,7 @@
 #include "pixelator/image.hpp"
 #include <gtest/gtest.h>
 
-TEST(image_tests, test1) {
+TEST(image_tests, ImageCreationAndEmpty) {
   pixelator::Image empty_image{};
 
   const auto rows{42};
@@ -19,7 +19,7 @@ TEST(image_tests, test1) {
   EXPECT_EQ(image.size().cols, 23);
 }
 
-TEST(image_tests, test2) {
+TEST(image_tests, CopyConstructor) {
   pixelator::Image image{10, 10};
   const ftxui::Color yellowish{ftxui::Color::RGB(255, 200, 100)};
   image.at(4, 2) = yellowish;
@@ -29,7 +29,7 @@ TEST(image_tests, test2) {
   EXPECT_EQ(image_copy.at(4, 2), yellowish);
 }
 
-TEST(image_tests, test3) {
+TEST(image_tests, MoveConstructor) {
   pixelator::Image image{10, 10};
   const ftxui::Color yellowish{ftxui::Color::RGB(255, 200, 100)};
   image.at(4, 2) = yellowish;

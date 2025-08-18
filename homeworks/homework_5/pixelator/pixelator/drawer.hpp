@@ -18,5 +18,6 @@ public:
   void Set(const pixelator::Image& image);
   void Draw() const;
   std::string ToString() const;
+  ~Drawer() = default;
 };
 } // namespace pixelator
